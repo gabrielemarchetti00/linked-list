@@ -47,6 +47,34 @@ class LinkedList {
         }
         return count;
     }
+
+    head(){
+        return this.head;
+    }
+
+    tail(){
+        return this.tail;
+    }
+
+    at(index){
+
+    }
+
+    pop(){
+
+    }
+
+    contains(value){
+
+    }
+
+    find(value){
+
+    }
+
+    toString(){
+
+    }
 }
 
 class Node {
@@ -64,6 +92,5 @@ list.append(6);
 list.append(7);
 // 4 5 6 7
 
-
-let size = list.size();
-console.log(size);
+console.log(list.head);
+console.log(list.tail);
