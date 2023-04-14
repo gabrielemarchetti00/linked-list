@@ -10,8 +10,7 @@ class LinkedList {
             this.head = node;
             this.tail = node;
         }
-
-        if(this.tail == null){
+        else if(this.tail == null){
             let node = new Node(value);
             this.tail = node;
         }
@@ -28,8 +27,7 @@ class LinkedList {
             this.head = node;
             this.tail = node;
         }
-        
-        if(this.head == null){
+        else if(this.head == null){
             let node = new Node(value);
             this.head = node;
         }
@@ -63,23 +61,9 @@ let list = new LinkedList;
 list.prepend(5);
 list.prepend(4);
 list.append(6);
+list.append(7);
+// 4 5 6 7
 
-// 4 5 6
 
-console.log(list.head.value);
-console.log(list.head.next.value);
-console.log(list.tail.value);
-console.log(list.head.next.next.value);
-
-/*
 let size = list.size();
-//console.log(size);
-
-list.prepend(4);
-size = list.size();
 console.log(size);
-
-list.prepend(5);
-size = list.size();
-console.log(size);
-*/
