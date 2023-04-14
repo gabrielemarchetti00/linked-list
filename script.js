@@ -57,23 +57,68 @@ class LinkedList {
     }
 
     at(index){
-
+        let count = 0; 
+        let node = this.head;
+        while (node) {
+            if(index == count){
+                return node;
+            }
+            count++;
+            node = node.next
+        }
+        return 'invalid index';
     }
 
     pop(){
-
+        let node = this.head;
+        while (node.next) {
+            if(node.next.next == null){
+                this.tail = node;
+                node.next = null;
+            }
+            else{
+                node = node.next;
+            }
+        }
     }
 
     contains(value){
-
+        let node = this.head;
+        while (node) {
+            if(value == node.value){
+                return true;
+            }
+            node = node.next
+        }
+        return false;
     }
 
     find(value){
-
+        let index = 0; 
+        let node = this.head;
+        while (node) {
+            if(value == node.value){
+                return index;
+            }
+            index++;
+            node = node.next
+        }
+        return null;
     }
 
     toString(){
-
+        let index = 0;
+        let str = '';
+        let node = this.head;
+        while (node) {
+            str = str + '( ' + node.value + ' ) -> ';
+            if(node.next == null){
+                str = str + 'null';
+            }
+            node = node.next;
+            index++;
+        }      
+        console.log(str); 
     }
 }
 
@@ -86,11 +131,10 @@ class Node {
 
 let list = new LinkedList;
 
-list.prepend(5);
-list.prepend(4);
-list.append(6);
-list.append(7);
-// 4 5 6 7
 
-console.log(list.head);
-console.log(list.tail);
+list.prepend(2)
+list.prepend(50)
+list.append(1)
+
+list.toString();
+console.log(list.size());
